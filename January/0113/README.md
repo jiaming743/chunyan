@@ -13,6 +13,12 @@
   * Transition动画
   * Animation动画
 
+## 学习重点
+
+  * 多写写学习教程的示例
+  * HTML5的新特性
+  * CSS的布局和动画 Flex布局 Float布局
+
 ## 作业
 
  * Transition动画，一个小球从左移动到右边
