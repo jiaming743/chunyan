@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>transition</title>
-</head>
-<style >
-
-    div{
+    <title>animation</title>
+    <style>
+         div{
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: rgb(111, 111, 235);
     margin-left: 0px;
-    transition: all linear 3s;
-       }
-    
-div:hover{
-margin-left: 1000px;
-background-color: chocolate;
+    animation: myfirst 3s infinite alternate;
 }
-</style>
+    @keyframes myfirst 
+{
+from  {background:rgb(250, 248, 248);margin-left: 0px;}
+to {background:blue; margin-left: 1000px;}
+}
+    </style>
+</head>
 <body>
-    <div ></div>
+    <div></div>
 </body>
 </html>
