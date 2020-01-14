@@ -11,7 +11,7 @@
 
 ## 学习要点
 
-  * Flex布局为主
+  * Flex布局为主 [Flex](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
   * CSS box-sizing属性
   * CSS display属性
 
