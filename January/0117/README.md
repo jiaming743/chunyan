@@ -9,6 +9,7 @@
 
 * DOM BOM对象
 * 基础数据类型的静态、原型方法
+* String Number Array Object
 
 JS内容比较多，可以多写写，比如新建一个demo.js里面直接写JS逻辑 然后用命令工具直接 node demo.js就能运行 看到输出
 
