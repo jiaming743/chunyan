@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 输出100-200之间所有的质数
+      /*   1：当这个数大于7时：就用这个数分别取除以2,3,5,7.
+      如果这个数除以2,3,5,7都除不尽那么这个数就是质数,只要这个数能除尽2,3,5,7的任何一个数那么这个数就是合数.
+     2：当这个数小于等于7时你就只需要记得2,3,5,7是质数就行了.
+     */
+      /* for(var i=100;i<=200;i++){
+        for(var j=2;j<=i-1;j++){
+            if(i%j!=0){
+                document.write()
+            }
+        }
+    } */
+
+      var conn = 0;
+      for (var i = 100; i <= 200; i++) {
+        var flag = true;
+        for (var m = 2; m <= 100; m++) {
+          if (i % m == 0) {
+            flag = false;
+          }
+        }
+        if (flag) {
+          document.write(i);
+          conn++;
+          document.write("<br/>");
+        }
+      }
+      document.write(conn + "个");
+      document.write("<br/>");
+      // 求1+2!+3!+...+20!的值
+      var sum = 0;
+      var a = 1;
+      for (var i = 1; i <= 20; i++) {
+        for (var j = 1; j <= i; j++) {
+          a = a * j;
+        }
+        sum = sum + a;
+        a = 1; //因为要清空a的值，使它等于1.  3！=1*2*3
+      }
+      document.write(sum);
+      document.write("</br>");
+      // 完成一个三角形打印功能
+      for (var i = 1; i <= 9; i++) {
+        for (var j = 1; j <= 9; j++) {
+          if (j < 1 + i) {
+            document.write("*");
+          } else {
+            document.write("");
+          }
+        }
+        document.write("</br>");
+      }
+      document.write("</br>");
+      //   完成一个梯形打印功能
+      for (var i = 3; i <= 9; i++) {
+        for (var j = 1; j <= 9; j++) {
+          if (j < 1 + i) {
+            document.write("*");
+          } else {
+            document.write("");
+          }
+        }
+        document.write("</br>");
+      }
+      document.write("</br>");
+
+      // 打印九九乘法表
+      for (var i = 1; i <= 9; i++) {
+        for (var j = 1; j <= i; j++) {
+          document.write(j + "*" + i + "=" + i * j);
+          document.write("&nbsp;&nbsp;");
+        }
+        document.write("<br />");
+      }
+      /*  有一个棋盘，有64个方格，在第一个方格里面放1粒芝麻重量是0.00001kg，
+        第二个里面放2粒，第三个里面放4，棋盘上放的所有芝麻的重量*/
+      var s_sum = 0;
+      var weight = 0;
+      var a = 1;
+      for (var i = 1; i <= 64; i++) {
+        a = 2 ** (i - 1);
+        document.write(a);
+        document.write("&nbsp;&nbsp;");
+        s_sum = s_sum + a;
+        //    weight=a*0.00001;
+        //    s_sum=s_sum+weight;
+        a = 1;
+      }
+      document.write("<br />");
+      document.write(s_sum + "");
+      var weight = s_sum * 0.00001;
+      document.write("<br />");
+      document.write(weight);
+      // 篮球从5米高的地方掉下来，每次弹起的高度是原来的30%，经过几次弹起，篮球的高度小于0.1米
+      var height = 5;
+      var num = 0;
+      while (height >= 0.1) {
+        height = height * 0.3;
+        num++;
+      }
+      document.write("<br />");
+      document.write(num);
+    </script>
+  </body>
+</html>

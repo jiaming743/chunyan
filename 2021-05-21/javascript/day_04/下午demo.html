@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           //1.编写任意个数字的求和、差、积、商的函数   sum(1,2,3,4,5,6,'-')
+           function yunsuan(){
+               var sum=0;
+               var ji=1;
+               for(var i=0;i<arguments.length;i++){
+                   sum=sum+arguments[i];
+                   ji=ji*arguments[i];
+               }
+              console.log("任意个数的和为"+sum+"任意个数的和积"+ji);
+               return sum;
+           }
+           var res=yunsuan(1,2,3,9);
+        //    2.编写生成4位数字验证码的函数，并生成10次.
+            //   提示：使用Math.random()函数可以产生[0-1）之间的随机小数
+            function yanzheng(){
+                for(var i=1;i<=10;i++){
+                  var a= String(parseInt(Math.random()*10)); 
+                  var b= String(parseInt(Math.random()*10)); 
+                  var c= String(parseInt(Math.random()*10)); 
+                  var d= String(parseInt(Math.random()*10));  
+                  console.log("第"+i+"个验证码"+a+b+c+d);
+                 
+                }
+            }
+            yanzheng();
+            // 3.编写一个函数，计算任意两个数字之间所能组成的奇数个数，数字必须是个位数
+            // 比如： 计算0-3之间能组成的奇数个是01、03、11、13、21、23、31、33
+            function numbers(a,b){
+                for(var i=a;i<=b;i++){
+                    for(var j=a;j<=b;j++){
+                        var num=String(i)+String(j)
+                        if(Number(num)%2!=0){
+                            console.log(num);
+                        }
+                    }
+                }
+            }
+            numbers(0,3);
+
+
+
+           /*  // 4.某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，
+            加密规则如下：每位数字都加上5,然后用除以10的余数代替该数字，再将第一位和第四位交换，
+            第二位和第三位交换，请编写一个函数，传入原文，输出密文 */
+            function mi(s){
+                var a=parseInt(s/1)%10;
+                var b=parseInt(s/10)%10;
+                var c=parseInt(s/100)%10;
+                var d=parseInt(s/1000)%10;
+                console.log();
+                var ge=String((a+5)%10);
+                var shi=String((b+5)%10);
+                var bai=String((c+5)%10);
+                var qian=String((d+5)%10);
+                console.log(ge+shi+bai+qian);
+
+            }
+              mi(4567);
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.编写一个函数，计算两个数字的和、差、积、商
+        function sum(a, b) {
+            var sum = a + b;
+            console.log("和" + sum);
+            console.log("<br/>");
+
+            var cha = a - b;
+            console.log("差" + cha);
+            console.log("<br/>");
+
+            var ji = a * b;
+            console.log("积" + ji);
+            console.log("<br/>");
+
+            var shang = a / b;
+            console.log("商" + shang);
+            console.log("<br/>");
+        }
+        sum(5, 9);
+        // 2.编写一个函数，三个不同的整数， 判断哪个数字最大，哪个数字最小，哪个数组在中间,在控制台输出
+        //冒泡排序
+        function equalss(arr) {
+            // var arr = [a, b, c];
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            for (var i = 0; i < arr.length; i++) {
+                document.write(arr[i]);
+                document.write("<br/>");
+            }
+           
+        }
+        equalss([9,10,24,2,1,10,0]);
+        // 方法二
+        function px(arr){
+            var aa= arr.sort(function(b,a){
+                return b-a;
+            })
+            console.log(aa)
+        }
+
+        // 方法三
+        px1([7,4,6,8,32,76])
+        function px1(arr){
+            for(var i=0;i<arr.length-1;i++){
+                for(var j=0;j<=i;j++){
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            document.write(arr);
+                document.write("<br/>");
+        }
+        
+        // 普通排序
+
+    
+
+    </script>
+</body>
+
+</html>
