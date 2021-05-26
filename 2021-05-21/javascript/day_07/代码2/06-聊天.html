@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="ipt" />
+    <button id="btn">按钮</button>
+    <ul id="list">
+      <!-- <li>垃圾xxx</li> -->
+    </ul>
+    <script>
+      // 点击的时候获取输入框值 -》  《li》《li》 给 ul
+      btn.onclick = function () {
+        let str = `<li>${ipt.value}</li>`;
+        console.log(str);
+
+        str = filter(str);
+        ipt.value = "";
+
+        console.log(list.innerHTML); //原来ul中内容
+        list.innerHTML = str + list.innerHTML;
+      };
+
+      function filter(str) {
+        // 比如我要过滤 "SM"
+        var arr = ["SM", "垃圾", "SB", "sb"];
+
+        //   str = str.replaceAll(arr[0], "*");
+        //   str = str.replaceAll(arr[1], "*");
+
+        //   asdasd*asdasdasd*sdasdasd*sada*s*d
+        for (var v of arr) {
+          str = str.replaceAll(v, "*");
+        }
+        return str;
+      }
+    </script>
+  </body>
+</html>

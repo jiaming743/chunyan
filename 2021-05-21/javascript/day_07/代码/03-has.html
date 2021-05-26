@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 编写函数has(arr , 60) 判断数组中是否存在60这个元素，返回布尔类型
+      var arr = [1, 2, 3, 60];
+      var arr2 = [1, 2, 3];
+
+      function has(a, num) {
+        // code in here ...
+        if (a.indexOf(num) == -1) {
+          return false;
+        } else {
+          return true;
+        }
+
+        // 穷举  反证法
+        // var flag = false; //假设 num不在数组中
+        // for (let i = 0; i < a.length; i++) {
+        //   if (a[i] == num) {
+        //     // return true;
+        //     flag = true;
+        //   } else {
+        //     // return false;
+        //   }
+        // }
+        // return flag;
+      }
+
+      console.log(has(arr, 60)); // true
+      console.log(has(arr2, 60)); // false
+    </script>
+  </body>
+</html>

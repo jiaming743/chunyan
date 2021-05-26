@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log("hello".concat("aa", "bbb"));
+        console.log("aaa".replace(0));
+        console.log("aaa".replace(0));
+        // 1.foreach方法
+        var arr = ["1", "2", "3"];
+        arr.forEach(function (v, i, a) {
+            console.log("1数组元素" + v);
+            console.log("1数组元素" + a);
+        })
+
+        // 2,map方法
+        let res2 = arr.map(function (v, i, a) {
+            console.log("2数组元素" + v);
+            return v * 2;
+        })
+        console.log(res2);
+        console.log(arr);
+        // 3.filter
+        let res3 = arr.filter(function (v, i, a) {
+            return v > 1;
+        });
+        console.log("3数组" + res3);
+        // 4. every
+        let res4=arr.every(function(v){
+            return v>1;
+        }); console.log("4数组" + res4);
+        // 5.some
+        let res5=arr.some(function(v){
+            return v>1;
+        });console.log("5数组" + res5);
+        // 6.find
+        let res6=arr.find(function(v){
+            return v>1;
+        });console.log("6数组    " + res6);
+        // 7.findindex
+        let res7=arr.findIndex(function(v){
+            return v==2;
+        });console.log("7数组    " + res7);
+        // 8.reduce
+        var arr2=[1,2,3]
+        let res8=arr2.reduce(function(sum,v){
+            console.log(sum,v);
+            return sum+v;
+        },0);console.log("8数组    " + res8);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ASCII
+
+      var str = "ab你1";
+      console.log(str.charCodeAt(0));
+      console.log(str.charCodeAt(1));
+      console.log(str.charCodeAt(2));
+      console.log(str.charCodeAt(3));
+
+      console.log("a" > "b"); //false 比较的是编码
+
+      console.log(str.charAt(0)); //a
+      console.log(str[0]); //a
+
+      console.log(str.includes("ab"));
+      console.log(str.indexOf("你"));
+
+      console.log(str.substring(0, 1));
+      console.log(str.slice(0, 1));
+
+      console.log(str.substr(0, 2));
+
+      //   字符串的方法 都不改变原字符串
+      console.log(str);
+
+      //   要改变字符串 只能把 结果赋值给str
+      str = str.slice(0, 1);
+      console.log(str);
+
+      console.log("aBA".toLowerCase());
+      console.log("aBA".toUpperCase());
+
+      //   替换的了第一个
+      console.log("你是垃圾吗，垃圾".replace("垃圾", "*"));
+      console.log("你是垃圾吗，垃圾".replaceAll("垃圾", "*"));
+
+      console.log("a-b-c".split("-")); //["a", "b", "c"]
+
+      //   字符串转为真数组
+      console.log("a-b-c".split("")); //["a", "-", "b", "-", "c"]
+    </script>
+  </body>
+</html>

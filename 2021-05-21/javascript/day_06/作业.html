@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        /* 1.山上有一口缸可以装50升水，现在有15升水。
+        老和尚叫小和尚下山挑水，每次可以挑5升。问：
+        小和尚要挑几次水才可以把水缸挑满？通过编程解决这个问题 */
+        var water=15;
+        var count =0;
+        while(true){
+            if(water>=50){
+                break;
+            }
+            water=water+5
+           count++;
+        }
+        console.log(count);
+        /* 2.定义一个含有30个整型元素的数组，按顺序分别赋予从2开始的偶数；
+        然后按顺序每五个数求出一个平均值，放在另一个数组中并输出。试编程。 */
+        var arr=new Array(30);
+        var res=new Array();
+        var a=0;
+        var ress=0;
+        var j=0;
+        for(var i=1;i<=arr.length;i++){
+            a=a+2;
+            arr[i-1]=a;
+            if(i%5==0&&i!=0){ 
+            ress=(arr[i-5]+arr[i-1]+arr[i-2]+arr[i-3]+arr[i-4])/5;
+            res[j]=ress;
+            j++;
+            }
+        }
+        console.log(res);
+        /*3.通过循环按行顺序为一个5×5的二维数组a赋1到25的自然数，
+        然后输出该数组的左下半三角。试编程。  */
+        var arr_1=new Array(5);
+        var count=1;
+        for(var i=0;i<arr_1.length;i++){
+            arr_1[i]=new Array(5);
+          
+            for(var j=1;j<=5;j++){
+                arr_1[i][j-1]=count;
+                count++;
+            }
+        }
+       console.log(arr_1);
+        
+       for(var a=0;a<arr_1.length;a++){
+           for(var b=0;b<=a;b++){
+            document.write(arr_1[a][b]);
+            document.write("&nbsp;&nbsp")
+           }
+           document.write("</br>")
+       }
+
+    //    4.冒泡排序
+    var arr4=[7,5,3,2,0];
+    for(var i=0;i<arr4.length-1;i++){
+        for(var j=0;j<arr4.length-i-1;j++){
+        if( arr4[j]>arr4[j+1]){
+         var temp=arr4[j];
+         arr4[j]=arr4[j+1];
+         arr4[j+1]=temp;
+        }
+    } }
+    console.log("冒泡arr4"+"    "+arr4);
+    //5.选择排序
+    var arr5=[1,0,2,6,9,5,1];
+    for(var i=0;i<arr5.length;i++){
+        for(var j=i+1;j<arr5.length;j++)
+        if(arr5[i]>arr5[j]){
+            var temp=arr5[j];
+            arr5[j]=arr5[i];
+            arr5[i]=temp;
+        }
+       
+    }
+    console.log("选择arr5"+"    "+arr5);
+    </script>
+</body>
+</html>

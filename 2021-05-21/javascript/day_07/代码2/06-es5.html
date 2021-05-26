@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // with 语句
+      var obj = { age: 18 };
+      obj.age;
+      with (obj) {
+        console.log(age); //obj.age
+      }
+      /* 
+        语法严谨 
+        提升js执行效率
+        为新语法做铺垫
+      */
+      // https://cn.history.js.org/part-3.html
+      // es3  1998
+
+      // 开会 2009 es4-？     -》  es5
+
+      //   es future -》
+      // 2015  es6 （语法）    es2015
+      // 2016  es7     es2016
+
+      // 2021  es12     es2021
+      //   age = 19;
+      // age is not defined
+    </script>
+    <script>
+      function box(a) {
+        // "use strict";
+        console.log(a);
+        console.log(this); //Window
+
+        // 不能在 undefined 上设置b属性
+        // Cannot set property 'b' of undefined
+        this.b = 2; //window.b = 2; 定义了全局变量b =2
+
+        // age = 19;
+      }
+
+      box(1, 2);
+      console.log(b);
+
+      function fn(a, b) {
+        // "use strict";
+        a = 100; //实参值改变了 ，arguments 元素跟着变化  【100,2,3,4,5】
+
+        // 严格模式 arguments 不能追踪实参变化
+        console.log(arguments);
+      }
+      fn(1, 2, 3, 4, 5);
+
+      //正常模式
+
+      // with 语句   严格模式不允许使用with语句
+      var obj = { age: 18 };
+      obj.age;
+      with (obj) {
+        console.log(age); //obj.age
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.push是用来在数组的末尾追加一个元素,返回添加以后的长度
+       var arr1=[1,2,3];
+       arr1.push(4);
+       console.log(arr1);
+    // 2.pop 是用来删除数组末尾的一个元素,返回删除的元素
+    var arr2=[2,4,6,9];
+    console.log(arr2.pop());
+    console.log(arr2);
+// 3.unshift 是在数组的最前面添加一个元素
+var arr3=[1,2,3,4];
+arr3.unshift(6);
+console.log(arr3);
+//4.shift` 是删除数组最前面的一个元素
+var arr4=[1,2,3,4];
+arr4.shift();
+console.log(arr4);
+//5.splice 是截取数组中的某些内容，按照数组的索引来截取
+var arr5=[1,2,3,4,5];
+var res=arr5.splice(1);
+console.log(res);
+//6.reverse 是用来反转数组使用的
+var arr6 =[1,2,3,4];
+arr6.reverse();
+console.log(arr6);
+//7.sort是用来给数组排序的（默认按照字典排序  先按照第一位排序-如果第一位相等就按照第二位）
+var arr7=[1,2,6,0,8,5,9];
+arr7.sort(function(a,b){
+    return a-b;//升序
+})
+console.log(arr7);
+arr7.sort(function(a,b){
+    return b-a;//降序
+})
+console.log(arr7);
+    </script>
+</body>
+</html>

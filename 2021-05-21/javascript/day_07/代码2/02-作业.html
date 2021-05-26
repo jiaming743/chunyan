@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 随机生成一个五位以内的数，然后输出该数共有多少位，每位分别是什么
+      // 提示：随机数*10000 -》 数字--》字符串
+      var num = parseInt(Math.random() * 10000);
+      console.log(num);
+      var res = "" + num;
+      console.log(res);
+      console.log(res.length);
+      for (var i in res) {
+        console.log(res[i]);
+      }
+      for (var v of res) {
+        console.log(v);
+      }
+
+
+      </script>
+  </body>
+</html>

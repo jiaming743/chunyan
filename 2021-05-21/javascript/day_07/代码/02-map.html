@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // map(arr) 把数组中的每一位数字都增加30%，并返回一个新数组
+      function map(arr) {
+        // 把数组中的每一位数字都增加30%
+        var r = [];
+        for (let i = 0; i < arr.length; i++) {
+          let c = arr[i];
+          r.push(c * 1.3);
+        }
+        return r;
+      }
+
+      var arr1 = [1, 2, 3];
+      var res = map(arr1);
+      console.log(res);
+    </script>
+  </body>
+</html>

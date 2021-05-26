@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   /* 1. 已知字符串“a,a,b,c,c,d”，统计每个字符出现的次数，
+    结果显示 a 2、b 1、c 2、d1，去掉重复的字符，使结果
+    显示 “a,a,b,c,c,d-》abcd  
+    （字符串去重  -》数组 split（''） 数组去重） */
+    var str1="aabccd" ;
+    var arr=str1.split("");
+    var res=[];
+    var aa=0;
+    var bb=0;
+    var cc=0;
+    var dd=0;
+    console.log(arr);
+     for(var i=0;i<arr.length;i++){
+         if(res.indexOf(arr[i]) == -1){
+            res.push(arr[i])
+         }
+         if(arr[i]=="a"){aa++}
+         else if(arr[i]=="b"){bb++}
+         else if(arr[i]=="c"){cc++}
+         else if(arr[i]=="d"){dd++}
+     }
+     console.log(res);
+     console.log(aa+"  "+bb+"  "+cc+" "+dd);
+     /*2.随机生成一个五位以内的数，然后输出该数共有多少位，每位分别是什么  */
+                     var str=parseInt(Math.random()*10000)+"";
+                     console.log(str);
+                     console.log(str.length)
+                   var arr= str.split("");
+                     console.log(arr);
+                     for(let i in arr){
+                         
+                         console.log(i+":"+arr[i]);
+                     }
+  /* 3.var str = 'asdasdSMasdasdasdSMsdasdasdSMsadasd'
+     需要结果
+     asdasd**asdasdasd**sdasdasd** */
+     var arr=["SM","垃圾","滚"];
+     var str3='asdasdSMasdasdasdSMsdasdasdSMsadasd';
+     for(let i in arr){
+         var str3=str3.replaceAll(arr[i],"**");
+     } console.log(str3);
+    //  console.log(str3.replaceAll("SM","**"));
+     /* 4. */
+    </script>
+</body>
+</html>

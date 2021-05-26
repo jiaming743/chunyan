@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./loadsh.min.js"></script>
+  </head>
+  <body>
+    <script>
+      let str = "a,a,b,c,c,d";
+      //a b c d
+      let arr = str.split(",");
+      console.log(arr);
+      let resArr = _.uniq(arr);
+      console.log(resArr); //"a", "b", "c", "d"
+
+      for (var c of resArr) {
+        let times = 0;
+
+        //c -> a  b  c  d
+        //a 在str中出现的次数
+        //遍历 str 字符 挨个和 c变量的值 比较 ，如果相等  次数加1
+        for (var v of str) {
+          if (c == v) {
+            times++;
+          }
+        }
+        console.log(c, times);
+      }
+    </script>
+  </body>
+</html>

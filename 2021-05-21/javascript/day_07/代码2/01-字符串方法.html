@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = new String("  aa  ");
+      console.log(str);
+
+      //   去首尾空格
+      console.log(str.trim());
+      console.log(str.trimStart());
+      console.log(str.trimEnd());
+
+      //   合并字符串
+      console.log(str.concat("aa", "bbb"));
+      //   是否 以字符串开头  结束
+      console.log("hello abc".startsWith("hello")); //true
+      console.log("hello abc".endsWith("abc")); //true
+
+      console.log("aaa".repeat(2)+"    ");
+      console.log("aaa".repeat(0));
+
+      //   拼字符串
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 
+            a = 2  
+            b = 1 
+
+            基础数据类型 传递过程 传的普通的值，传递以后 两个变量没有关系
+            复杂数据类型 传递过程 传的地址，传递以后 两个变量是同一块内存 -  其实就是同一个变量
+
+        */
+      //值 传递基本数据类型和复杂数据类型
+      var a = 1;
+      //  基本数据类型（在栈中存储）  a的值 复制一份 给了 b （a和b没有关系）  值传递
+      var b = a;
+      a = 2;
+      console.log(b); //
+
+      /* 
+        c = 100
+        num = 100 = 3 
+      
+      */
+      function box(num) {
+        num = 3;
+      }
+      var c = 100;
+      //   基本数据类型  c的值 复制一份 给了 num
+      box(c); //num = c;
+      console.log(c); //100
+
+      //   复杂数据类型 是把 值复制了一份给了 obj2
+
+      var obj1 = { name: "zhangsan" }; // obj1= 01   栈中存入地址，  堆中存所有的属性
+
+      //   传递的值 比较特殊 是一个内存地址 ，地址传递 引用传递
+      var obj2 = obj1; //obj1 的值赋值给了 obj2   obj1的值 复制了一份 给了 obj2 （obj1 的地址给了obj2   obj1和obj2 是同一块内容）
+      obj1.name = "zhangsanfeng";
+      console.log(obj2.name); //zhangsanfeng
+
+      var obj3 = { name: "lisi" };
+      function fn(obj4) {
+        obj4.name = "wangwu";
+      }
+      fn(obj3); // obj4= obj3 （基本数据类型和复杂类型）  obj3的地址给了obj4  （快捷方式）
+      console.log(obj3.name); //wangwu
+
+      var arr1 = [1];
+      var arr2 = arr1; // arr1的地址给了arr2
+      arr1[0] = 1000;
+      console.log(arr2[0]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 创建*** 字面量
+      var str1 = "aaaa";
+
+      //   模板字符串 字符串中 ${变量}-》结果
+      var str2 = `aaa 
+      
+      a`; //反引号
+      console.log(str1);
+      console.log(str2);
+
+      var age = 19;
+      let str3 = "姓名是" + str1 + ",年龄是" + age;
+      let str4 = `姓名是${str1},年龄是${age}`;
+
+      console.log(str3);
+      console.log(str4);
+
+      //   ****构造函数
+      let str5 = new String("abc"); // 对象-》非常像数组-》 类数组 伪数组
+      /* 
+0: "a"
+1: "a"
+2: "a"
+length: 3
+      */
+      console.log(str5[0]); //a
+      console.log(str5.length); //a
+      for (var i = 0; i < str5.length; i++) {
+        console.log(str5[i]);
+      }
+
+      //   str5.push is not a function  字符串不是数组，不能使用数组的方法
+      //   console.log(str5.push());
+      let str6 = String("bbb");
+      console.log(str5);
+      console.log(str6);
+
+      console.log(str1.length);// 隐式转换 str1.length   => new String(str1).length
+      console.log(str1[0]);
+      console.log(typeof str1); //string
+      console.log(typeof str5); //object
+
+    //   str1 包装对象
+    </script>
+  </body>
+</html>
