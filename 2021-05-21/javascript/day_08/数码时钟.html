@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+            background-color: pink;
+            color: white;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+   <img src="" alt="" id="p1">
+   <img src="" alt="" id="p2">
+   <img src="" alt="" id="p3">
+   <img src="" alt="" id="p4">
+   <img src="" alt="" id="p5">
+   <img src="" alt="" id="p6">
+
+    <script>
+        //  let now=new Date();
+
+
+
+
+        setInterval(function () {
+            let now = new Date()
+            var hour = now.getHours();
+            var min = now.getMinutes();
+            var sec = now.getSeconds();
+
+
+            var hour_ge = parseInt(hour / 1) % 10;
+           
+            var hour_shi = parseInt(hour / 10) % 10;
+            console.log(hour+"  "+min+"   "+sec+"位数"+hour_shi+"  "+hour_ge);
+            var min_ge = parseInt(min / 1) % 10;
+            var min_shi = parseInt(min / 10) % 10;
+            var sec_ge = parseInt(sec / 1) % 10;
+            var sec_shi = parseInt(sec / 10) % 10;
+            p1.src = `img/${hour_shi}.png`;
+            p2.src = `img/${hour_ge}.png`;
+            p3.src = `img/${min_shi}.png`;
+            p4.src = `img/${min_ge}.png`;
+            p5.src = `img/${sec_shi}.png`;
+            p6.src = `img/${sec_ge}.png`;
+           
+
+
+        }, 1000)
+       
+    </script>
+</body>
+
+</html>

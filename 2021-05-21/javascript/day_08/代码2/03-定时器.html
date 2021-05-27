@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div"></div>
+    <!-- style="display: none;" -->
+    <img id="img1" src="./img/1.png" alt="" />
+    <img id="img2" src="./img/0.png" alt="" />
+    <script>
+      let num = 10;
+      div.innerHTML = num;
+
+      function box() {
+        // console.log(1);
+        num--;
+        console.log(num);
+        div.innerHTML = num;
+        img2.src = `./img/${num}.png`;
+        if (num < 10) {
+          img1.style.display = "none";
+        }
+        if (num == 0) {
+          //清除定时器
+          clearInterval(timer);
+        }
+      }
+
+      //   间隔 5000毫秒执行 box 一次，先间隔5000毫秒-再执行box-间隔5000毫秒-再执行box
+      let timer = setInterval(box, 1000);
+    </script>
+  </body>
+</html>

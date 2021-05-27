@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="moment.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // 1.  将日期格式化输出 “2015|01|24”
+        moment.locale("zh-cn"); //使year显示为中文;
+        console.log(moment().format("YYYY | MM |DD")); //2021 | 05 |26
+        // 2.判断两个日期相差的天数,传入的是时间，且按从大到小排；
+      
+
+
+
+        let now = new Date();
+        let date = new Date("2021-05-26 18:00:00");
+        let c = now - date; //毫秒数
+        var day= parseInt(c / 1000 / 60 / 60 / 24)
+        
+        var hour = 0;
+        
+        if (day>= 1) {
+            var msecond=c-(day*24*60*60*1000);
+            hour=(msecond / 1000 / 60/ 60);
+                console.log("相差" + day + "天" + hour+ "小时");
+        } else {
+             hour=  ( c / 1000 / 60/ 60);
+            console.log("相差" + hour + "小时")
+        }
+        // 3.获得N天以后的日期
+       
+        console.log( moment().add(1,"days"));
+        //4.日期函数封装(dateUtil.js)（封装常见的功能）
+
+        
+        //5.倒计时(京东倒计时)
+
+    </script>
+</body>
+
+</html>

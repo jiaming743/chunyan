@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./moment.min.js"></script>
+    <!-- <script src="http://cdn.staticfile.org/moment.js/2.24.0/moment-with-locales.min.js"></script> -->
+  </head>
+  <body>
+    <script>
+      moment.locale("zh-cn");//使year显示为中文;
+      //   当前时间格式化
+      let str = moment().format("MMMM Do YYYY, hh:mm:ss a");
+      console.log(str);
+
+      console.log(moment().format("YYYY | MMMM |Do, hh:mm:ss a"));
+
+      console.log(moment("2021-5-24 17:10:00").fromNow());
+
+      console.log(moment().subtract(10, "days").calendar());
+    </script>
+  </body>
+</html>

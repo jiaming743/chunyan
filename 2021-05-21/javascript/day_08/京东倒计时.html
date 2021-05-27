@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="moment.min.js"></script>
+    <style>
+        span{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+            background-color: black;
+            color: white;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <span id="s1"></span>
+    <span id="s2"></span>
+    <span id="s3"></span>
+    <script>
+    
+        // 倒计时(京东倒计时)
+        // 先建一个定时器，每1000毫秒，也就是1秒执行一次
+     let timer=   setInterval(function () {
+           let now=new Date()
+           let date=new Date('2021-5-27 09:09') 
+        //    算出时间差
+           let a=date-now
+        // 时间差转化为时，分，秒
+        var sec=parseInt(a/1000)%60;
+        var min=parseInt(a/1000/60)%60;
+        var hour=parseInt(a/1000/60/60);
+        if(sec<10){ s3.innerHTML="0"+sec;} else{ s3.innerHTML=sec;}//秒
+        if(min<10){ s2.innerHTML="0"+min;} else{ s2.innerHTML=min;}
+        if(hour<10){ s1.innerHTML="0"+hour;} else{ s1.innerHTML=hour;}
+        // s3.innerHTML=sec;//秒
+        // s2.innerHTML=min;//分
+        // s1.innerHTML=hour;//时
+        if(a<=0){
+            clearInterval(timer);
+        }
+
+        },1000 )
+    </script>
+</body>
+</html>

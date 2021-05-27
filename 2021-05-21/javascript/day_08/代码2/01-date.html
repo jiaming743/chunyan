@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 创建   当前时间
+      let d1 = new Date();
+
+      //   Wed May 26 2021 16:08:48 GMT+0800 (中国标准时间)
+      console.log(d1); //字符串 隐式转换 字符串
+      console.log(d1.toString());
+
+      //2029年  0    月 -》1月
+      let d2 = new Date(2029, 0);
+      console.log(d2);
+
+      let d3 = new Date(2029, 0, 26, 19, 50, 50, 300);
+      console.log(d3);
+
+      //   传入一个数字
+
+      //   Thu Jan 01 1970 08:00:05 GMT+0800
+
+      //
+      let d4 = new Date(5000);
+      console.log(d4);
+
+      //   计算机存时间  ->数字 距离 公元1970年的 毫秒数
+
+      // 获取相当于1970年毫秒数   时间戳
+      console.log(d3.getTime());
+
+      let d5 = new Date(1864122650300);
+      console.log(d5);
+
+      //  ******** 传入字符串的形式 特定格式
+      let d6 = new Date("2019/02/03 13:13:13");
+      console.log(d6);
+      //   Sun Feb 03 2019 13:13:13 GMT+0800 (中国标准时间)
+
+      // 2019/02/03 13:13:13 ->  2019年02月03日  星期三
+
+      // 方法 没有属性
+
+      console.log(d6.getFullYear()); //年
+      console.log(d6.getMonth()); //月  1  月从0开始
+
+      console.log(d6.getDate()); //日
+      console.log(d1.getDay()); //星期   1星期于  3    6 星期刘   0星期日
+
+      //   时分秒 毫秒
+      console.log(d1.getHours());
+      console.log(d1.getMinutes());
+      console.log(d1.getSeconds());
+      console.log(d1.getMilliseconds());
+
+      //   获取时间戳  1622017620404
+      console.log(d1.getTime());
+
+      let y = d6.getFullYear();
+      let m = d6.getMonth() + 1;
+
+      console.log(`${y}年${m}月`);
+
+      //   utc  格林威治
+      console.log(d1.getUTCHours());
+
+      //   set  修改日期
+      let now = new Date();
+      //   修改日期
+      //   now.setFullYear(2090);
+      //   now.setFullYear(now.getFullYear() + 1);
+
+      now.setMonth(14);
+      //   now.setDate(4);
+
+      //  星期不能设置 now.setDay is not a function
+      //   now.setDay(4);
+
+      //   如果设置的 时间超出正常的值 自动往后推算
+      //   now.setHours(25);
+      console.log(now);
+
+      
+    </script>
+  </body>
+</html>
