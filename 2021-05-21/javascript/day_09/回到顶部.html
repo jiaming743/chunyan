@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            /* width: 1000px; */
+            height: 1000px;
+            background-color:pink;
+        }
+        button{
+            width: 50px;
+            height: 40px;
+            position: sticky;
+            top: 400px;
+            margin-left: 1200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <button type="submit" value="回到顶部" id="btn">回到顶部</button>
+    </div>
+    <script>
+      btn.onclick =function(){
+          document.body.scrollTop=document.documentElement.scrollTop=0;
+      }
+    </script>
+</body>
+</html>

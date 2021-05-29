@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="进度.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 第一个 -->
+        <div class="progress-container">
+            <div class="progress">
+                <div class="bar">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!-- 第二个 -->
+
+        <div class="progress-container">
+            <div class="progress">
+                <div class="bar">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 3 -->
+        <div class="progress-container">
+            <div class="progress">
+                <div class="bar">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+   /*  var bar = document.querySelector(".bar");
+    var i = 0;
+    var timer = setInterval(function () {
+        i++;
+        bar.style.width = i + "%";
+        bar.querySelector("span").innerHTML = i + "%";
+        if (i == 100) {
+            clearInterval(timer)
+        }
+    }, 100) */
+
+
+
+    // -------------------------函数-----------------------
+
+    function running(a, b,c) {
+        var bar = document.querySelectorAll(".bar");
+        var i = 0;
+        var timer = setInterval(function () {
+            i++;
+            bar[a].style.width = i + "%";
+            bar[a].querySelector("span").innerHTML = i + "%";
+            if (i == c) {
+                clearInterval(timer)
+            }
+        }, b)
+
+    }
+    running(0,100,20);
+    running(1,1000,80);
+    running(2,10,100);
+
+</script>
+
+</html>

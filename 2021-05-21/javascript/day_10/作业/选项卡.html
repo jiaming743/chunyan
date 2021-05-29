@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box1">
+        <input type="button" id="ipt" value="历史" style="color: red" />
+        <input type="button" id="ipt" value="体育" />
+        <input type="button" id="ipt" value="娱乐" />
+    </div>
+    <div id="box2">
+        <div style="display: block">历史</div>
+        <div style="display: none">体育</div>
+        <div style="display: none">娱乐</div>
+    </div>
+</body>
+<script>
+    let ipts = document.querySelectorAll('#box1 input')
+    let divs = document.querySelectorAll('#box2  div')
+    ipts.forEach(function (v, i) {
+        v.onclick = function () {
+            //   所有的字体变黑
+            ipts.forEach(function (a, b) {
+                a.style.color = 'black'
+            })
+            // 所有的div消失
+            divs.forEach(function (ss, dd) {
+                ss.style.display = 'none'
+            })
+            divs[i].style.display = "block"
+            v.style.color = 'red'
+        }
+    })
+</script>
+
+</html>

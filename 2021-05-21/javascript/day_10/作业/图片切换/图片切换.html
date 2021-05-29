@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="ipt">
+    <input type="button" id="ipt">
+    <input type="button" id="ipt">
+    <input type="button" id="ipt">
+    <div id="divs">
+        <img src="img/001.jpg" alt="" id="imgs">
+    </div>
+</body>
+<script>
+    var ipts = document.querySelectorAll("#ipt");
+    var imgg = document.querySelector("#divs img");
+    ipts.forEach(function (v, i) {
+        v.onclick = function () {
+            ipts.forEach(function(vv){vv.style.backgroundColor="white"})
+            v.style.backgroundColor="yellow";
+            imgg.src = `img/00${i+1}.jpg`;//imgg.style.src= `img/00${i+1}.jpg`;这样写是错误的，因为src和style是同一级的；
+        }
+    })
+</script>
+
+</html>

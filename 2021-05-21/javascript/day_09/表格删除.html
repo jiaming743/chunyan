@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tables {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    姓名： <input type="text" id="names">
+    学号： <input type="text" id="studyid">
+    分数： <input type="text" id="score">
+    <button id="btn">提交</button>
+    <table border="1" id="tables">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>学号</th>
+                <th>分数</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+</body>
+<script>
+    // 1.获取元素
+    let names = document.querySelector("#names");
+    let studyid = document.querySelector("#studyid");
+    let score = document.querySelector("#score");
+    let tables = document.querySelector("#tables");
+    let btn = document.querySelector("#btn");
+    // 2.
+    btn.onclick = function () {
+        var strname = names.value;
+        var strid = studyid.value;
+        var strscore = score.value;
+        var htmls = `
+        <tr>
+        <td>${strname}</td>
+        <td>${strid }</td>
+        <td>${strscore }</td>
+        <td><button class="del">删除</button></td>
+        </tr> `
+        tables.innerHTML = htmls + tables.innerHTML;
+        //给删除按钮添加事件
+        let delArr = document.querySelectorAll(".del");
+        for (let i = 0; i < delArr.length; i++) {
+            let delBtn = delArr[i];
+            delBtn.onclick = function () {
+                console.log(delBtn.parentElement.parentElement);
+                delBtn.parentElement.parentElement.remove();
+            };
+        }
+        names.value = "";
+        studyid.value = "";
+        score.value = "";
+    }
+</script>
+
+</html>
