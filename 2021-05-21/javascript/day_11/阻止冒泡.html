@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        margin: 0 auto;
+      }
+      #div2 {
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+      }
+      #div22 {
+        width: 200px;
+        height: 200px;
+        background-color: bisque;
+      }
+      #div222 {
+        width: 100px;
+        height: 100px;
+        background-color: coral;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div2">
+      <div id="div22">
+        <div id="div222"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let div2 = document.querySelector('#div2')
+    let div22 = document.querySelector('#div22')
+    let div222 = document.querySelector('#div222')
+    div2.onclick = function (v) {
+      console.log('div2');
+     
+    }
+
+    div22.onclick = function (v) {
+      console.log('div22')
+    //   v.stopPropagation();
+    }
+    div222.onclick = function (evt) {
+      console.log('div222')
+      evt.stopPropagation();
+    }
+    document.onclick=function(){
+        console.log('document')
+    }
+  </script>
+</html>

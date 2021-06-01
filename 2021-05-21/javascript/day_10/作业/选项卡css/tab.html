@@ -297,12 +297,18 @@
         var lis = document.querySelectorAll("#navUL li");
         var boxs = document.querySelectorAll(".box");
         lis.forEach(function (v, i) {
-            // console.log(lis[i]);
-           
-            v.onclick = function(){
-                boxs.forEach(function (a, b) { a.style.display = "none"});
+            
+
+            v.onclick = function () {
+                lis.forEach(function (a, b) {
+                    boxs[b].style.display = "none";
+                    // a.style.display = "none";
+                    a.className = " ";
+                });
                 boxs[i].style.display = "block";
+                v.className = "active";
             }
+
         })
     </script>
 </body>

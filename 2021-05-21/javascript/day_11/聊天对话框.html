@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            height: 500px;
+            width: 500px;
+            border: 1px solid grey;
+            margin: 40px auto 0px auto;
+            padding: 10px;
+            position: relative;
+            /* text-align: center; */
+        }
+
+        #hua {
+            height: 300px;
+            width: 490px;
+            border: 1px solid grey;
+            margin: 0 auto;
+            overflow-y: scroll;
+        }
+
+        #txt {
+
+            height: 100px;
+            width: 490px;
+            border: 1px solid grey;
+            margin: 0 auto;
+            margin-top: 10px;
+           
+        }
+
+        #btn {
+            width: 50px;
+            height: 30px;
+        /* margin-right: 150px;不生效 */
+            /* margin-left: 300px;
+            margin-top: 10px; */
+            position: absolute;
+            right: 50%;
+            bottom: 10%;
+        }
+
+        #list {
+            list-style: none;
+          
+
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            margin-right: 20px;
+
+
+
+
+        }
+
+        #list li {
+
+            height: auto;
+            width: fit-content;
+            border-radius: 5px;
+            background-color: rgb(141, 216, 141);
+            margin: 6px 0 6px 0;
+            font-size: 14px;
+            padding: 4px;
+
+            align-self: flex-end;
+
+
+
+        }
+
+        p:nth-child(2) {
+            background-color: rgb(189, 185, 185);
+        }
+
+        p:nth-child(1) {
+            background-color: rgb(185, 185, 185);
+        }
+
+        p:nth-child(3) {
+            position: relative;
+            left: 400px;
+            background-color: rgb(141, 216, 141);
+        }
+
+        p:nth-child(4) {
+
+            background-color: rgb(185, 185, 185);
+        }
+
+        p:nth-child(5) {
+            background-color: rgb(185, 185, 185);
+        }
+
+        p {
+            height: auto;
+            width: fit-content;
+            margin: 6px 0 6px 0;
+            font-size: 14px;
+            padding: 4px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="hua">
+            <p>hello?</p>
+            <p>hello</p>
+            <p>aaaaa</p>
+            <p>sbsbsbsb</p>
+            <p>you you</p>
+            <ul id="list">
+
+
+            </ul>
+        </div>
+        <input type="text" id="txt">
+        <br>
+    <input type="button" id="btn" value="发送">
+    </div>
+    </div>
+</body>
+<script>
+    let ull = document.querySelector("#list"); //ul
+    let txt = document.querySelector("#txt"); //文本框
+    let btn = document.querySelector("#btn"); //提交按钮
+let hua=document.querySelector("#hua");
+    btn.onclick = function (evt) {
+
+        var ttext = `<li><span>${txt.value}</span>
+    </li>`;
+        if (txt.value != "") {
+            ull.innerHTML += ttext;
+            var y = hua.scrollHeight;
+        hua.scrollTop = y;
+        } else {
+            alert("请输入值")
+        }
+
+        txt.value = "";
+
+      
+
+    }
+
+    txt.onkeydown = function (evt) {
+        if (evt.ctrlKey && evt.keyCode == 13) {
+            var ttext = `<li>${txt.value}
+    </li>`;
+            if (txt.value != "") {
+                ull.innerHTML += ttext;
+            } else {
+                alert("请输入值")
+            }
+            let lis = document.querySelectorAll("#ull li")
+            lis.forEach(function (v, i) {
+
+
+            })
+            txt.value = "";
+        }
+
+    }
+</script>
+
+</html>

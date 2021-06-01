@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="select下拉菜单效果.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="ipts">
+        <input type="text" placeholder="请选择游戏名称" id="ipt" value="" />
+        <input type="button" value="搜索" />
+      </div>
+      <div id="selects">
+        <ul id="sel">
+          <li>地下城与勇士</li>
+          <li>魔兽世界（国服）</li>
+          <li>魔兽世界（台服）</li>
+          <li>热血江湖</li>
+          <li>大话西游II</li>
+          <li>QQ幻想世界</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    let lis = document.querySelectorAll('#sel li')
+    let ull = document.querySelector('#sel')
+    let ipt = document.querySelector('#ipt')
+    ipt.onclick = function (v) {
+      ull.style.display = 'block'
+      lis.forEach(function (v, i) {
+        v.onclick = function (evt) {
+          ipt.value = v.innerText;
+          ull.style.display = 'none';
+          
+        }
+      })
+      v.stopPropagation()
+    }
+
+    document.onclick = function () {
+      ull.style.display = 'none'
+    }
+  </script>
+</html>
