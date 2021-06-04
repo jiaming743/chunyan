@@ -1,0 +1,65 @@
+{
+  "id": "2461087",
+  "name": "我的项目",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8351822",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "19463360",
+      "name": "地址 定位 位置",
+      "font_class": "dizhidingweiweizhi",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "18968936",
+      "name": "时钟",
+      "font_class": "shizhong",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "11776586",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "18246795",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "14929932",
+      "name": "联系人 (1)",
+      "font_class": "lianxiren1",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "11778707",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "485763",
+      "name": "收 藏",
+      "font_class": "shoucang",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    }
+  ]
+}

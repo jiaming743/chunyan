@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        账号登录*：<input type="text" id="ipt_id" placeholder="限小写字母或数字的组合"><span></span><br>
+        你的昵称：<input type="text" id="ipt_name" placeholder="中英文皆可"><span></span><br>
+        电子邮件*：<input type="text" id="ipt_email"><span></span><br>
+        设置密码*：<input type="password" id="ipt_pwd"><span></span><br>
+        确认密码*：<input type="password" id="ipt_pwdd"><span></span><br>
+        <input type="button" value="强度评估"><span></span><br>
+        上传头像：<input type="file" value="选择头像" id="ipt_file"><span></span><br>
+        个人说明：<textarea name="" id="" cols="10" rows="5"></textarea><span></span><br>
+        个人主页：<input type="text" id="ipt_myself"><span></span><br>
+        <input type="button" value="注册" id="ipt_zc"><span></span><br>
+
+    </form>
+</body>
+<script>
+var flag=false;
+var ipts=document.querySelectorAll("input");
+var arr=[];
+
+
+function fn(reg,str,flag,i){
+    if(reg.test(str)){
+        ipts[i].nextElementSibling.innerHTML = "格式正确";
+        flag=true;
+
+    } else {
+        ipts[i].nextElementSibling.innerHTML = "格式不正确,请重新输入";
+          flag = false;
+        }
+        return flag;
+}
+
+// 1. 账号登录
+ipts[0].onchange=function(){
+    let str=this.value;
+    let reg=/^[a-z0-9]{1,}$/;
+    var res= fn(reg,str,flag,0);  
+arr.push(res);
+};
+ 
+// 2. 你的昵称
+ipts[1].onchange=function(){
+    let str=this.value;
+    let reg=/^([a-zA-Z]|[\u2E80-\u9FFF]){1,}$/;
+    fn(reg,str,flag,1); 
+  
+};
+ 
+//  3. 电子邮件
+ipts[2].onchange=function(){
+    let str=this.value;
+    let reg=/^[0-9]{1,12}@qq\.com$/;
+    var res= fn(reg,str,flag,2);
+    arr.push(res); 
+};
+
+//  4.设置密码
+ipts[3].onchange=function(){
+    let str=this.value;
+    let reg=/^\S{6}$/;
+    var res=fn(reg,str,flag,3);
+    arr.push(res);  
+};
+ 
+ //5.确认密码
+ ipts[4].onchange=function(){
+    let str=this.value;
+   
+    if(str==ipts[3].value){
+        this.nextElementSibling.innerHTML = "两次输入一致,确认密码正确";
+        flag=true;
+        arr.push[flag];
+    } else {
+          this.nextElementSibling.innerHTML = "两次输入不一致,请重新输入";
+          flag = false;
+        }
+        arr.push(flag); 
+};
+ 
+//  6.强度评估
+ipts[5].onclick=function(){
+    let str=this.value;
+   let reg1=/^[0-9]{1,}$/;
+   let reg2=/^[a-zA-Z]+$/;
+   console.log(ipts[3].value);
+        if(reg1.test(ipts[3].value)&&reg2.test(ipts[3].value)){
+
+            this.nextElementSibling.innerHTML = "密码强度中";   
+        }
+        else if (reg1.test(ipts[3].value)){
+        this.nextElementSibling.innerHTML = "密码强度弱";
+        }
+        else{
+
+            this.nextElementSibling.innerHTML = "密码强度";
+        }
+    };
+// 注册6ge
+ipts[8].onclick=function(){
+    for(let ii=0; ii<arr.length;ii++){
+        if(ii){}
+        else{this.nextElementSibling.innerHTML = "不可以注册，请重新输入";}
+    }
+
+}
+</script>
+</html>

@@ -1,0 +1,396 @@
+/* 样式重置 */
+body,
+html,
+div,
+p ,ul ,li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+#container {
+    height: auto;
+    width: 100%;
+    background-color: rgb(230, 182, 182);
+}
+
+/* font */
+@font-face {
+    font-family: 'iconfont';
+    src: url('font/iconfont.woff2') format('woff2'),
+        url('font/iconfont.woff') format('woff'),
+        url('font/iconfont.ttf') format('truetype');
+}
+
+/* header */
+#header {
+    width: 100%;
+    height: 46px;
+    background-color: #e3e4e5;
+}
+
+#header .header {
+    margin: 0 auto;
+    width: 1000px;
+    height: 46px;
+    background-color: #e3e4e5;
+}
+
+#header .header .left {
+    height: 46px;
+    width: 70px;
+    /* border: 1px solid black; */
+    float: left;
+}
+
+#header .header .left span:nth-child(1) {
+    font-family: "iconfont";
+    text-align: center;
+    line-height: 46px;
+    margin: 0 2px 0 2px;
+    color: red;
+}
+
+#header .header .left span:nth-child(2) {
+    color: #999999;
+}
+
+#header .header .right {
+    height: 46px;
+    width: 700px;
+    /* border: 1px solid black; */
+    float: right;
+}
+
+#header .header .right ul li a {
+    display: block;
+    color: #999999;
+    text-align: center;
+
+}
+
+#header .header .right ul li {
+    display: inline-block;
+    margin: 0 4px 0 4px;
+
+}
+
+/* <a href="">a标签字体的颜色只能由自己设置，不能从父元素那里继承得到 */
+#header .header .right ul li a:hover {
+    color: red;
+}
+
+#header .header .right ul #list {
+    display: none;
+    position: absolute;
+
+}
+
+#header .header .right ul #list li {
+    display: block;
+}
+
+#header .header .right ul li:nth-child(1):hover #list {
+    color: red;
+    display: block;
+}
+
+/* 第二部分 */
+#jd {
+    border: 1px solid black;
+    height: 210px;
+    width: 100%;
+    background-color: #fff;
+}
+
+#jd .jd {
+    height: 210px;
+    width: 1000px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+#jd .jd .left {
+    float: left;
+    height: 210px;
+    width: 280px;
+}
+
+#jd .jd .left img {
+    height: 210px;
+    width: 280px;
+}
+
+#jd .jd .right {
+    float: right;
+    padding-top: 30px;
+    height: 170px;
+    width: 700px;
+    /* background-color: crimson; */
+}
+
+#jd .jd .right .ipt {
+    font-family: 'iconfont';
+    position: relative;
+    font-size: 19px;
+    float: left;
+    height: 50px;
+    width: 500px;
+    margin-right: 10px;
+    background-color: red;
+}
+
+#jd .jd .right .ipt input {
+    height: 46px;
+    width: 420px;
+    /* margin: 2px ; */
+    border: none;
+    padding: 0;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+}
+
+#jd .jd .right .ipt span {
+    color: white;
+    position: absolute;
+    right: 15px;
+}
+
+#jd .jd .right .car {
+    height: 50px;
+    width: 150px;
+    border: 1px solid grey;
+}
+
+#jd .jd .right span {
+    margin: 0 8px 0 8px;
+    color: crimson;
+}
+
+#jd .jd .right .icon {
+    font-family: 'iconfont';
+    font-size: 18px;
+}
+
+#jd .jd .right div {
+    float: right;
+    text-align: center;
+    line-height: 50px;
+}
+
+#jd .jd .right .one {
+    clear: both;
+    margin: 70px auto 10px auto;
+}
+
+#jd .jd .right .one li {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+#jd .jd .right .one li a {
+    color: #999999;
+    text-align: center;
+    font-size: 19px;
+}
+
+#jd .jd .right .one li a:hover {
+    color: red;
+}
+
+#jd .jd .right .two {
+    margin: 30px auto 0 auto;
+}
+
+#jd .jd .right .two li {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+#jd .jd .right .two li a {
+    color: rgb(71, 70, 70);
+    text-align: center;
+    /* font-size:14px ; */
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#jd .jd .right .two li a:hover {
+    color: red;
+}
+
+/* 三个 */
+#main {
+    width: 100%;
+    background-color: #f4f4f4;
+
+}
+
+#main .main {
+    width: 1000px;
+    min-height: 300px;
+    margin: 10px auto;
+    background-color: #fff;
+    display: flex;
+}
+
+#main .main .left {
+    width: 30%;
+    min-height: 300px;
+    margin: 0 7px;
+    background-color: white;
+
+}
+
+#main .main .left li a {
+    color: #4e4e4e;
+}
+
+#main .main .left li {
+    margin: 5px;
+}
+
+#main .main .middle {
+    width: 60%;
+    min-height: 360px;
+    margin: 0 7px;
+
+}
+
+#main .main .middle img {
+    width: 100%;
+    height: 100%;
+}
+
+#main .main .right {
+    width: 30%;
+    min-height: 400px;
+    margin: 0 7px;
+    /* background-color: rgb(175, 138, 206); */
+}
+
+#main .main .right .top {
+    position: relative;
+}
+
+#main .main .right .top img {
+    margin-left: 3%;
+    border-radius: 50%;
+
+}
+
+#main .main .right .top ul {
+    position: absolute;
+    right: 6%;
+    top: 5%;
+}
+
+#main .main .right .top div {
+    position: absolute;
+    right: 6%;
+    width: 100%;
+    /* bottom: 5%;   */
+    text-align: center;
+
+}
+
+#main .main .right .top div input {
+    /* width: 50px; */
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: red;
+}
+
+hr {
+    margin-top: 28px;
+    width: 90%;
+    color: #999999;
+}
+
+#main .main .right .top li a {
+    color: #4d4b4b;
+}
+
+#main .main .right .middle {
+    width: 100%;
+    height: 50px;
+    /* background-color: yellow; */
+    margin: 0;
+}
+
+#main .main .right .middle ul li {
+    margin: 7px;
+}
+
+#main .main .right .middle ul li a {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #303030;
+    font-size: 15px;
+}
+
+#main .main .right .middle ul li span {
+
+    /* width: 18px;
+     height: 12px; */
+    background-color: rgb(223, 181, 181);
+    margin-right: 10px;
+    color: red;
+    /* font-size: 12px; */
+}
+
+#main .main .right .middle ul li a .txt {
+    background-color: transparent;
+    font-size: 19px;
+    font-weight: 600;
+    color: black;
+    margin-right: 10px;
+}
+
+#main .main .right .bottom ul {
+    width: 210px;
+    height: 250px;
+    /* background-color: tomato; */
+    margin: 0 auto;
+   
+}
+
+#main .main .right .middle .bottom #lists li {
+    width: 50px;
+    height: 40px;
+    margin: 7px 7px 19px 7px;
+ float: left;
+    
+}
+
+#lists li img {
+    width: 100%;
+    height: 100%;
+}
+
+#two {
+    margin-top: 10px;
+}
+/* 第四部分 */
+#container #img{
+    width: 100%;
+}
+#container #img .img{
+    display: flex;
+    margin: 0 auto;
+    width: 1000px;
+    height: 300px;
+    background-color: rgb(189, 104, 104);
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+   <div id="box"></div> 
+</body>
+<script>
+    let box=document.querySelector("#box");
+    box.onmousedown=function(evt){
+        let offsetx=evt.offsetX;
+        let offsety=evt.offsetY;
+        document.onmousemove=function(v){
+            let pagex=v.pageX;
+            let pagey=v.pageY;
+            box.style.left=pagex-offsetx+"px";
+            box.style.top=pagey-offsety+"px";
+        }
+document.onmouseup=function(){
+    document.onmousemove=null;
+}
+    }
+</script>
+</html>
