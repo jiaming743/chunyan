@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <style>
+      ul {
+      }
+
+      .item li {
+        list-style: none;
+        width: 590px;
+        height: 340px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .leftBtn {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .rightBtn {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      div {
+        position: relative;
+        width: 590px;
+        height: 340px;
+      }
+
+      .page {
+        position: absolute;
+        bottom: 50px;
+        left: 200px;
+        height: 30px;
+        /*width: 300px;*/
+      }
+
+      .page li {
+        float: left;
+        width: 30px;
+        height: 30px;
+        list-style: none;
+        background: red;
+        border-radius: 50%;
+        line-height: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <ul class="item">
+        <li style="opacity: 1"><img src="images/1.jpg" /></li>
+        <li><img src="images/2.jpg" /></li>
+        <li><img src="images/3.jpg" /></li>
+        <li><img src="images/4.jpg" /></li>
+        <li><img src="images/5.jpg" /></li>
+      </ul>
+
+      <button class="leftBtn">&lt;</button>
+      <button class="rightBtn">&gt;</button>
+
+      <ul class="page">
+        <li style="background-color: white">0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    let page = 0
+    let lefts=0;
+    // 圆点点击事件
+    let page_li = document.querySelectorAll('.page li')
+    let img_li = document.querySelectorAll('.item li')
+    let rightBtn = document.querySelector('.rightBtn')
+    let leftBtn=document.querySelector(".leftBtn");
+    page_li.forEach(function (v, i) {
+
+      v.onclick = function () {
+
+        page_li.forEach(function (a, b) {
+          a.style.backgroundColor = 'red'
+          img_li[b].style.opacity = '0'
+        })
+        v.style.backgroundColor = 'white'
+
+        img_li[i].style.opacity = '1'
+        page=i;
+        lefts=i;
+      }
+
+     
+
+    })
+    // 右箭头点击事件
+    rightBtn.onclick = function () {
+        // console.log(page);
+        page++
+      if (page == 5) {
+        page = 0;
+        page_li.forEach(function (a, b) {
+          a.style.backgroundColor = 'red'
+          img_li[b].style.opacity = '0'
+        })
+        page_li[page ].style.backgroundColor = 'white'
+        img_li[page].style.opacity = '1'
+        
+      } else {
+        page_li.forEach(function (a, b) {
+          a.style.backgroundColor = 'red'
+          img_li[b].style.opacity = '0'
+        })
+        page_li[page].style.backgroundColor = 'white'
+        img_li[page].style.opacity = '1'
+      }
+    }
+   
+// 左箭头事件
+leftBtn.onclick=function(){
+    page--;
+   
+    if(page==-1){
+       page=4;
+        page_li.forEach(function (a, b) {
+          a.style.backgroundColor = 'red'
+          img_li[b].style.opacity = '0'
+        })
+        page_li[page].style.backgroundColor = 'white'
+        img_li[page].style.opacity = '1'
+    }
+    else{page_li.forEach(function (a, b) {
+          a.style.backgroundColor = 'red'
+          img_li[b].style.opacity = '0'
+        })
+        page_li[page].style.backgroundColor = 'white'
+        img_li[page].style.opacity = '1'}
+        console.log(page);
+}
+ 
+// 移出事件
+let timer=setInterval(function(){
+        rightBtn.onclick();
+    },1000)
+let box=document.querySelector(".box");
+box.onmouseleave=function(){
+    timer=setInterval(function(){
+        rightBtn.onclick();
+    },1000)
+    
+}
+// 移入
+box.onmouseenter=function(){
+    clearInterval(timer);
+}
+  </script>
+</html>

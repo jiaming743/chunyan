@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      #container {
+        height: auto;
+        /* background-color: pink; */
+      }
+      #container .nav {
+        width: 1100px;
+        height: 60px;
+        /* background-color: powderblue; */
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      #container .nav .L {
+        width: 300px;
+        height: 60px;
+        line-height: 60px;
+        display: flex;
+        justify-content: space-around;
+      }
+      #container .nav .L span {
+        text-align: center;
+        font-size: 23px;
+        color: black;
+        font-weight: 650;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      #container .nav .L a {
+        display: inline-block;
+        height: 60px;
+        width: 170px;
+        vertical-align: middle;
+      }
+
+      #container .nav .R {
+        width: 136px;
+        height: 60px;
+        line-height: 60px;
+      }
+      #container .nav .R a {
+        font-size: 10px;
+        color: #666;
+      }
+      #container .nav .R a:hover {
+        text-decoration: underline;
+        color: red;
+      }
+      /* 2 */
+      #txt {
+        width: 100%;
+        background-color: #fff8f0;
+        height: 40px;
+      }
+      #txt .txt {
+        height: 40px;
+        width: 1100px;
+        margin: 0 auto;
+        background-color: #fff8f0;
+        line-height: 40px;
+        text-align: center;
+      }
+      #txt .txt p {
+        color: #999;
+        font-size: 12px;
+        margin: 0;
+      }
+      #txt .txt p a {
+        color: #999;
+        font-size: 12px;
+      }
+      /* 3 */
+      #bg {
+        width: 100%;
+        height: 475px;
+        background-color: #e93854;
+      }
+      #bg .bg {
+        height: 475px;
+        width: 1100px;
+        margin: 0 auto;
+        background: url(img/background.png) no-repeat;
+        position: relative;
+      }
+      #bg .bg .ma {
+        height: 400px;
+        width: 300px;
+        /* background-color: yellow; */
+        position: absolute;
+        right: 65px;
+        top: 25px; background-color: #fff;
+      }
+      #bg .bg .ma p {
+        width: 300px;
+        height: 40px;
+        color: #999;
+        background-color: #fff8f0;
+        text-align: center;
+        line-height: 40px;
+        font-size: 10px;
+        margin: 0;
+      }
+      #bg .bg .ma .txt {
+        width: 300px;
+        height: 50px;
+        background-color: #fff;
+        display: flex;
+      }
+      #bg .bg .ma .txt a {
+        display: block;
+        height: 50px;
+        width: 150px;
+        line-height: 50px;
+        text-align: center;
+        color: #666;
+      }
+      #bg .bg .ma .txt a:hover {
+        color: red;
+      }
+      #bg .bg .ma img {
+        position: absolute;
+        left: 80px;
+        bottom: 140px;
+      }
+      #bg .bg .ma .open { background-color: #fff;
+        text-align: center;
+        height: 30px;
+        width: 300px;
+        /* background-color: rosybrown; */
+        position: absolute;
+        bottom: 100px;
+        line-height: 30px;
+      }
+      #bg .bg .ma .open a {
+        margin: 0 auto;
+        color: #666;
+      }
+      #bg .bg .ma #ss {
+        width: 210px;
+        height: 40px;
+        display: flex;
+        list-style: none;
+        position: absolute;
+        left: 45px;
+        bottom: 50px;
+       padding: 0;
+margin: 0 auto;
+        /* background-color: skyblue; */
+        justify-content: space-around;
+      }
+      #bg .bg .ma #ss li{
+        width: 70px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        color: #666;
+      }
+      #bg .bg .ma .list{
+width: 300px;
+height: 30px;
+position: absolute;
+bottom: 0;
+left: 0;
+display: flex;
+justify-content: space-around;
+      }
+      #bg .bg .ma .list div{
+          width: 120px;
+          height: 30px;
+      }
+      #copy{
+          width: 100%;
+          height: 86px;
+          background-color: white;
+      }
+      #copy .copy{
+        width: 1100px;
+        background-color: white;
+        margin: 0 auto;
+          height: 86px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+
+      <!-- 1.nav -->
+      <div class="nav">
+        <div class="L">
+          <a href="#"><img src="img/logo-201305-b.png" alt="" /></a>
+          <span>欢迎登录</span>
+        </div>
+
+        <div class="R">
+          <a href="#">登录页面，调查问卷</a>
+        </div>
+      </div>
+      <!-- 2.. -->
+      <div id="txt">
+        <div class="txt">
+          <p>
+            依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版
+            <a href="#">《京东隐私政策》</a>
+            已上线，将更有利于保护您的个人隐私。
+          </p>
+        </div>
+      </div>
+      <!-- 3 -->
+
+      <div id="bg">
+        <div class="bg">
+          <div class="ma">
+            <p>京东不会以任何理由要求您转账汇款，谨防诈骗。</p>
+            <div class="txt">
+              <a>扫码登录</a>
+              <a>账户登录</a>
+            </div>
+            <img src="img/show.png" alt="" />
+            <p class="open"><a href="#">打开手机京东</a></p>
+            <ul id="ss">
+              <li>免输入</li>
+              <li>免输入</li>
+              <li>免输入</li>
+            </ul>
+            <div class="list">
+                <div class="R">
+                   <span>qq</span>
+                    <span>微信</span>
+                </div>
+                <div class="L"><a href="#">立即注册</a></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div id="copy">
+<div class="copy"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>--------商品列表---------</h2>
+    <ul id="shop_ul"> </ul>
+    <h2>--------购物车列表---------</h2>
+    <ul id="car_ul"> </ul>
+
+    <script>
+        let arr = [{
+            name: "小米",
+            price: 1000,
+            id: 1
+        }, {
+            name: "红米",
+            price: 3000,
+            id: 2
+        }, {
+            name: "苹果",
+            price: 3000,
+            id: 3
+        }];
+        //将数组中数据展示在商品列表-    shop_ul
+        let s_ul = document.querySelector("#shop_ul");
+        let html = "";
+        arr.forEach((obj) => {
+            html += ` <li>
+            <h2>${obj.name}</h2>
+            <p>${obj.price}</p>
+            <p>${obj.id}</p>
+            <button class="add_btn">加入购物车</button>
+        </li>`;
+            s_ul.innerHTML = html;
+        })
+        //存添加进购物车的数据
+        let btns = document.querySelectorAll(".add_btn");
+        btns.forEach((btn, i) => {
+            btn.onclick = () => {
+                var carlist = localStorage.getItem("car_list");
+                let arr2 = [];
+                if (carlist == null) {
+
+                    arr2.push(arr[i]);
+                    localStorage.setItem("car_list", JSON.stringify(arr2));
+
+                } else {
+                    arr2 = JSON.parse(carlist);
+                    arr2.push(arr[i]);
+                    localStorage.setItem("car_list", JSON.stringify(arr2));
+
+                }
+                carload();
+            }
+
+        })
+
+
+
+       
+        carload();
+        function carload() {
+            var car_text = " ";
+            var c_ul = document.querySelector("#car_ul");
+            let carlist2 = localStorage.getItem("car_list");
+            if (carlist2 != null) {
+                carlist2 = JSON.parse(localStorage.getItem("car_list"));
+                carlist2.forEach(function (a) {
+                    car_text += ` <li>          
+           <h2>商品名称：${a.name}</h2>
+           <p>商品价格：${a.price}</p>    
+           <button class="del">删除</button>
+           </li>`;
+
+                });
+                c_ul.innerHTML = car_text;
+
+
+                let aa = document.querySelectorAll(".del");
+                console.log(aa);
+                aa.forEach(function (v, i) {
+                    v.onclick = function () {
+                        let c_arr = JSON.parse(localStorage.getItem("car_list"));
+                        c_arr.splice(i, 1);
+                        localStorage.setItem("car_list", JSON.stringify(c_arr));
+                        if (c_arr.length == 0) {
+                            localStorage.removeItem("car_list");
+                            c_ul.innerHTML = "购物车中没有数据！";
+                        } else {
+                            carload();
+                        }
+
+                    }
+                })
+
+
+            } else {
+                c_ul.innerHTML = "购物车中没有数据！";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
